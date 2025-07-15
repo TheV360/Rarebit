@@ -15,6 +15,7 @@ const maxpg = 14; //the current number of pages your comic has in total. this DO
 //YOU MUST UPDATE THIS NUMBER EVERY TIME YOU ADD A NEW PAGE or else it wont display the most recent page
 
 // COMIC PAGE SETTINGS
+const indexPage = "index.html"; //set which html page your comics are on, supremely important. archive system will break otherwise
 const folder = "img/comics"; //directory of the folder where you keep all the comics
 const image = "pg"; //what you'll name all your comic pages
 const imgPart = "_" //special character(s) you put after the page number to subdivide pages into multiple image files (ie pg2_1, pg2_2, etc)
