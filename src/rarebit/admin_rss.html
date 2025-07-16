@@ -4,43 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebComic | Characters</title>
-
-    <!-- style -->
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <title>WebComic | Admin | RSS Generator</title>
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <!-- Cherry Cream Soda -->
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap" rel="stylesheet">
-    <!-- Open Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
-<body align="center">
+<body>
+    <div align="center">
 
     <!-- header -->
     <div class="writeHeader"></div>
 
     <div class="subPage clearfix" align="center">
         <h1>Generate RSS Feed</h1>
-		
-		<style>
-		textarea { font-size: 12pt; }
-		textarea[readonly] { background-color: #eee; }
-		</style>
-		
-		<textarea class=rssGeneration cols=80 rows=24 readonly></textarea>
-		<br />
-		<a class=rssFileDownload download=rss_feed.xml>Download (not yet..!)</a>
+        
+        <style>
+        textarea { font-size: 12pt; }
+        [readonly] { background-color: #eee; }
+        </style>
+        
+        <p>Rarebit is being hosted from <input type=text class=runLocation size=40 readonly />!<br />If you've uploaded the site, the prior field now holds the baseUrl that you can paste directly into your comic_settings.js file!</p>
+        <textarea class=rssGeneration cols=80 rows=24 readonly></textarea>
+        <br />
+        <p><a class=rssFileDownload download=rss_feed.xml>Download (not yet..!)</a></p>
+        <p><small>If you want to verify if your RSS feed is well-formed, head over to the official RSS validator!<br /><a class=rssFileValidator>Click this link and the validator will open with your RSS feed already inputted.</a></small></p>
     </div>
 
     <!-- footer -->
     <div class="writeFooter"></div>
+    
+    </div>
 
 <!-- at the end of this page we only call the header and footer scripts, because we don't need use any functions from the other scripts. -->
+<script src="js/comic_header.js" defer></script>
 <script src="js/comic_settings.js" defer></script>
 <script src="js/comic_admin.js" defer></script>
-<script src="js/comic_header.js" defer></script>
 <script src="js/comic_footer.js" defer></script>
 </body>
 
