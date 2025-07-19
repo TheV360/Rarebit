@@ -86,7 +86,7 @@ function makeRSSDocument(lastXPages = 10) {
                 const segments = isSegmented ? data.imageFiles : 1;
                 for (let seg = 1; seg <= segments; seg++) {
                     const segmentSuffix = isSegmented ? `${imgPart}${seg}` : "";
-                    const src = `${folderPrefix}${image}${page}${segmentSuffix}.${ext}`;
+                    const src = new URL(`${folderPrefix}${image}${page}${segmentSuffix}.${ext}`, baseUrl);
                     if (seg > 1) description += `<br />`;
                     if (data.altText) {
                         description += `<img alt="` + data.altText + `" title="` + data.altText + `" src="` + src + `" />`;
@@ -125,7 +125,7 @@ function makeRSSDocument(lastXPages = 10) {
         channel = element("channel", [
             // https://www.rssboard.org/rss-specification#requiredChannelElements
             
-            element("link", baseUrl),
+            element("link", baseUrl.href),
             element("title", rssTitle),
             element("description", rssDescription),
             
@@ -141,7 +141,7 @@ function makeRSSDocument(lastXPages = 10) {
         ])
     ]);
     
-    const firstPage = Math.max(1, maxpg - lastXPages);
+    const firstPage = Math.max(1, maxpg - lastXPages + 1);
     for (let pg = firstPage; pg <= maxpg; pg++) {
         channel.appendChild(comicPageItem(pg));
     }
